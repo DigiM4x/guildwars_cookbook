@@ -1,0 +1,12 @@
+!!! 5
+%html
+  %head
+    = javascript_include_tag 'application'
+    = stylesheet_link_tag "application", :media => "all"
+    = csrf_meta_tags
+    %title= yield :title
+  %body
+    .container
+      = render 'layouts/header'
+      = yield
+      //= render 'layouts/footer'
