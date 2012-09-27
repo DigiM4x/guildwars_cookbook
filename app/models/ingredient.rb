@@ -8,8 +8,4 @@ class Ingredient < ActiveRecord::Base
     Gwlib.validate_ingredient_rarity(self.rarity)
   end
 
-  def find_or_create(ingredient_name)
-
-  end
-
 end
