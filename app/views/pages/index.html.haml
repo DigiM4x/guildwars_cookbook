@@ -1,6 +1,13 @@
 - content_for :title do
   - "Guild Wars 2 Cook Book"
 
+
+= debug params
+
 #pages
   %body
-    This page will require me to do a lot of ajax and javascript
+    = form_for :ingredient do |f|
+      = f.label :name, "Ingredient"
+      = f.text_field :name, :value => ""
+
+      = f.submit
