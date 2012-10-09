@@ -1,13 +1,11 @@
 namespace :GWCookbook do
 
-  task :initialize do
-    Ingredient_type.clear
-    Rarity.clear
+  task :initialize => :environment do
     ["Ingredient", "Soup","Meat", "Poultry", "Pork", "Seasoning"].each do |type|
-      Ingredient_type.create(type)
+      IngredientType.create(:name => type)
     end
-    ["junk", "basic", 'fine', 'masterwork', "rare", 'exotic', 'legendary', 'mystic'].each do |type|
-      Rarity.create(type)
+    ["junk", "basic", "fine", 'masterwork', "rare", "exotic", "legendary", "mystic"].each do |type|
+      Rarity.create(:name => type)
     end
   end
 
