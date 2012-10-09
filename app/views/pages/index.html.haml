@@ -2,5 +2,13 @@
   - "Guild Wars 2 Cook Book"
 #pages
   %body
-    %ul
-      %li= link_to "Add new ingredient", new_ingredient_path
+    %table
+      - @container.each do |item|
+        %tr
+          %td
+            = item
+    %p#search-bar
+      = form_tag('/pages', :method => :put) do
+        = text_field_tag 'container', nil, :placeholder => "Enter an ingredient here..."
+        = submit_tag 'Add ingredient'
+    %p= link_to "Add new ingredient", new_ingredient_path

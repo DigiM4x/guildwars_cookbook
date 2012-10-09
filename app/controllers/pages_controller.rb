@@ -1,11 +1,23 @@
 class PagesController < ApplicationController
   def index
+    @container = Array.new
   end
 
   def update
-    ingredient = Ingredient.find_or_create_by_name(params[:ingredient][:name])
+    @container.push(params[:container])
+    if @continer.include? params[:container]
+      flash[:notice] = "Item successfully added"
+      render :action => :show
+    else
+      flash[:notice] = "Item could not be added to list"
+    end
+  end
 
-    redirect_to pages_path(params)
+  def show
+    @container = params[:container]
+  end
+
+  def update
   end
 
 
