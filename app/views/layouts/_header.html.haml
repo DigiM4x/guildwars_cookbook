@@ -1,11 +1,11 @@
 #header
+.container
   .row.navbar
     .navbar-inner
-      .container
-        .brand= link_to "Cook Book", root_path
-        %ul.nav
-          %li= active_link_to "What is this?", root_path
-          %li= active_link_to "Ingredients"
-          %li= active_link_to "Recipes"
-          %li= active_link_to "Help"
-          %li= active_link_to "Contact Us"
+      %a.brand{:href => root_path} CookBook
+      %ul.nav
+        %li= active_link_to "What is this?", root_path
+        %li= active_link_to "Ingredients"99
+        %li= active_link_to "Recipes"
+        %li= active_link_to "Help"
+        %li= active_link_to "Contact Us"

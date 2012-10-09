@@ -6,9 +6,5 @@
 
 #pages
   %body
-
-    / = form_for :ingredient do |f|
-    /   = f.label :name, "Ingredient"
-    /   = f.text_field :name, :value => ""
-
-    /   = f.submit
+    %ul
+      %li= link_to "Add new ingredient", new_ingredient_path
