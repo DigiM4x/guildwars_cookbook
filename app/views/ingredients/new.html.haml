@@ -2,4 +2,10 @@
   = form_for @ingredient do |f|
     = f.label :name, "Ingredient"
     = f.text_field :name, :value => ""
+    = f.label :ingredient_type, "Type"
+    = f.select(:ingredient_type, [["Ingredient","Ingredient"], ["Soup","Soup"],["Meat","Meat"], ["Poultry","Poultry"], ["Pork","Pork"], ["Seasoning","Seasoning"]])
+    = f.label :rarity, "Rarity"
+    = f.select(:rarity, [["Junk","junk"], ["Basic","basic"], ["Fine", "fine"], ["Masterwork","masterwork"], ["Rare","rare"], ["Exotic","exotic"], ["Legendary","legendary"], ["Mystic","mystic"]])
+    = f.label :description, "Description"
+    = f.text_area :description, value: ""
     = f.submit
