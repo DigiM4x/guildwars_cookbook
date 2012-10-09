@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120927220323) do
+ActiveRecord::Schema.define(:version => 20121001170503) do
 
   create_table "effects", :force => true do |t|
     t.string  "name"
@@ -30,14 +30,27 @@ ActiveRecord::Schema.define(:version => 20120927220323) do
     t.boolean "is_basic",        :default => true
   end
 
-  create_table "recipes", :force => true do |t|
+  create_table "products", :force => true do |t|
     t.string  "name"
     t.string  "recipe_type"
     t.string  "rarity"
     t.text    "description"
-    t.integer "ingredient_id"
     t.integer "effect_id"
     t.integer "lvl_req"
+  end
+
+  create_table "recipes", :force => true do |t|
+    t.integer  "ingredient_id"
+    t.integer  "product_id"
+    t.datetime "updated_at"
+    t.datetime "created_at"
+  end
+
+  create_table "user_stacks", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "ingredient_id"
+    t.datetime "updated_at"
+    t.datetime "created_at"
   end
 
   create_table "users", :force => true do |t|

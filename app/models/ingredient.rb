@@ -1,7 +1,12 @@
 require 'gwlib.rb'
 
 class Ingredient < ActiveRecord::Base
-  belongs_to :recipes
+  has_many :user_stacks
+  has_many :users, :through => :user_stacks
+
+  has_many :recipes
+  has_many :products, :through => :recipes
+
   validates :name, :uniqueness => {:case_sensitive => false}
 
   def validate_rarity
