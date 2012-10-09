@@ -9,4 +9,4 @@
     = f.label :description, "Description"
     = f.text_area :description, value: ""
     = f.submit
-  = link_to "<--- go back to home", root_path
+  %a.reroute{:href => root_path} go back to home

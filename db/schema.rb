@@ -11,16 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121009074845) do
+ActiveRecord::Schema.define(:version => 20121009085012) do
 
   create_table "effects", :force => true do |t|
     t.string  "name"
     t.string  "value_effected"
     t.integer "amount_effected"
-  end
-
-  create_table "ingredient_types", :force => true do |t|
-    t.string "name"
   end
 
   create_table "ingredients", :force => true do |t|
@@ -41,10 +37,6 @@ ActiveRecord::Schema.define(:version => 20121009074845) do
     t.text    "description"
     t.integer "effect_id"
     t.integer "lvl_req"
-  end
-
-  create_table "rarities", :force => true do |t|
-    t.string "name"
   end
 
   create_table "recipes", :force => true do |t|
