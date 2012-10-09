@@ -4,5 +4,5 @@ Gwcookbook::Application.routes.draw do
   resources 'pages'
   resources 'ingredients'
 
-  match 'ingredients' => 'pages#create', as: 'ingredients'
+  match 'whatisthis' => 'whatisthis#index', as: 'whatisthis'
 end
