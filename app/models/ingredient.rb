@@ -9,6 +9,8 @@ class Ingredient < ActiveRecord::Base
 
   validates :name, :uniqueness => {:case_sensitive => false}
 
+  attr_accessor :name, :ingredient_type, :rarity, :description
+
   def validate_rarity
     Gwlib.validate_ingredient_rarity(self.rarity)
   end
