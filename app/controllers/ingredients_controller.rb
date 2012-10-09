@@ -1,6 +1,6 @@
 class IngredientsController < ApplicationController
   def index
-    @ingredients = Ingredient.all
+    @ingredient = Ingredient.find(:all)
   end
 
   def new
@@ -8,8 +8,7 @@ class IngredientsController < ApplicationController
   end
 
   def create
-    @ingredient = Ingredient.create(params[:ingredient])
-    if @user.save
+    if @ingredient = Ingredient.create(params[:ingredient])
       flash[:notice] = "Ingredient successflly created"
       render :action => :show
     else
