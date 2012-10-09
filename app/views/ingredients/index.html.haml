@@ -1,1 +1,10 @@
-%p Hello there, I dunno how you got here.
+#ingredients-list
+  %table
+    %tr
+      - @ingredient.each do |ingredient|
+        %td
+          %ul
+            %li= ingredient.name
+            %li= ingredient.ingredient_type
+            %li= ingredient.rarity
+            %li= ingredient.description
