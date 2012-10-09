@@ -9,8 +9,4 @@ class Ingredient < ActiveRecord::Base
 
   attr_accessible :name, :ingredient_type, :rarity, :description
 
-  def validate_rarity
-    Gwlib.validate_ingredient_rarity(self.rarity)
-  end
-
 end
